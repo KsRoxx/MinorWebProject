@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Control Your Home</title>
+	<style type="text/css">
+		body{
+			background: radial-gradient(blue,black);
+			background-repeat: none;
+			font-family: sans-serif;
+		}
+		#controls {
+			position: absolute;
+			top: 70vh;
+			left: 30vw;
+			font-weight: bold;
+		}
+
+		#controls a{
+			text-decoration: none;
+		}
+
+		span.buttons{
+			padding: 1em 5em;
+			margin-right: 5em;
+			border-radius: 2em;
+			background-color: white;
+			color: black;
+			transition: .8s;
+
+		}
+		span.buttons:hover {
+			background-color: red;
+			cursor: pointer;
+			color: white;
+		}
+		/*-------------------Bulb Design-----------------*/
+		#bulb {
+			position: absolute;
+			top: 1vh;
+			left: 40vw;
+			/*border: 1px solid white;*/
+			width: 20vw;
+			text-align: center;
+		}
+		#bulb img{
+			/*height: 60vh;
+			width: 16vw;*/
+		}
+		#about{
+			position: relative;
+			top: 12vh;
+			left: -1.5vw;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="bulb">
+		<img id="bulbImage" src="off.png" alt="Bulb Off">
+
+	</div>
+	<div id="controls">
+		<a href="#" onclick="turnOn()"; event.preventDefault();><span id="on" class="buttons" >Turn ON</span></a>
+		<a href="#" onclick="turnOff()"; event.preventDefault();><span id="off" class="buttons">Turn OFF</span></a>
+	
+		<img id="about" src="quasars.png" alt="About Project">
+		
+	</div>
+	
+	<script type="text/javascript">
+		var image = document.getElementById("bulbImage");
+		function turnOn() {
+			if (image.getAttribute('src') == "off.png")
+			{
+				image.src = "on.png";
+			}
+		}
+
+		function turnOff() {
+			if (image.getAttribute('src') == "on.png")
+			{
+				image.src = "off.png";
+			}
+
+		}
+	</script>
+</body>
+</html>
